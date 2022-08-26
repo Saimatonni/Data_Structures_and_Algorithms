@@ -7,9 +7,6 @@ struct Node {
     Node* right;
 };
  
-// Function to create a node with 'value' as the data
-// stored in it.
-// Both the children of this new Node are initially null.
 struct Node* newNode(int value)
 {
     Node* n = new Node;
@@ -26,29 +23,21 @@ struct Node* insertValue(struct Node* root, int value,
     if (root == NULL)
         root = node;
  
-    // The left child of the current Node is
-    // used if it is available.
     else if (q.front()->left == NULL)
         q.front()->left = node;
  
-    // The right child of the current Node is used
-    // if it is available. Since the left child of this
-    // node has already been used, the Node is popped
-    // from the queue after using its right child.
+   
     else {
         q.front()->right = node;
         q.pop();
     }
  
-    // Whenever a new Node is added to the tree, its
-    // address is pushed into the queue.
-    // So that its children Nodes can be used later.
+   
     q.push(node);
     return root;
 }
  
-// This function mainly calls insertValue() for
-// all array elements. All calls use same queue.
+
 Node* createTree(int arr[], int n)
 {
     Node* root = NULL;
@@ -72,7 +61,6 @@ void printPreorder(struct Node* node)
     printPreorder(node->right);
 }
  
-// This is used to verify the logic.
 void levelOrder(struct Node* root)
 {
     if (root == NULL)
