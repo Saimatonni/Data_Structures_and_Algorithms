@@ -4,22 +4,21 @@
 #define SIZE 50            
 
 char stack[SIZE];
-int top=-1;       /* Global declarations */
+int top=-1;      
  
  void push(char elem)
-{                       /* Function for PUSH operation */
+{                       
     stack[++top]=elem;
 }
  
 char pop()
-{                      /* Function for POP operation */
+{                     
     return(stack[top--]);
 }
  
 int pr(char symbol)
-{                 /* Function for precedence */
-    
-	if(symbol == '^')/* exponent operator, highest precedence*/
+{                
+	if(symbol == '^')
 	{
 		return(3);
 	}
@@ -27,7 +26,7 @@ int pr(char symbol)
 	{
 		return(2);
 	}
-	else if(symbol == '+' || symbol == '-')          /* lowest precedence */
+	else if(symbol == '+' || symbol == '-')         
 	{
 		return(1);
 	}
@@ -36,7 +35,7 @@ int pr(char symbol)
 		return(0);
 	}
 }
-  /* Main Program */
+  
 int main()
 {                        
     char infix[50],postfix[50],ch,elem;
@@ -63,9 +62,9 @@ int main()
                     push(ch);
                 }
     }
-    while( stack[top] != '#')     /* Pop from stack till empty */
+    while( stack[top] != '#')     
         postfix[k++]=pop();
-    postfix[k]='\0';          /* Make postfix as valid string */
+    postfix[k]='\0';         
     printf("\nPostfix Expression =  %s\n",postfix);
     return 0;
 }
