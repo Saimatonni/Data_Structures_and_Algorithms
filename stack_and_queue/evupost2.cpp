@@ -3,20 +3,20 @@ using namespace std;
 float scanNum(char ch){
    int value;
    value = ch;
-   return float(value-'0');//return float from character
+   return float(value-'0');
 }
 int isOperator(char ch){
    if(ch == '+'|| ch == '-'|| ch == '*'|| ch == '/' || ch == '^')
-      return 1;//character is an operator
-      return -1;//not an operator
+      return 1;
+      return -1;
    }
    int isOperand(char ch){
       if(ch >= '0' && ch <= '9')
-         return 1;//character is an operand
-      return -1;//not an operand
+         return 1;
+      return -1;
    }
    float operation(int a, int b, char op){
-      //Perform operation
+     
       if(op == '+')
          return b+a;
       else if(op == '-')
@@ -28,7 +28,7 @@ int isOperator(char ch){
       else if(op == '^')
          return pow(b,a); //find b^a
       else
-   return INT_MIN; //return negative infinity
+   return INT_MIN; 
 }
 float postfixEval(string postfix){
    int a, b;
