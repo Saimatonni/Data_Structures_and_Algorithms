@@ -1,9 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
- 
- 
-/* A binary tree node has data, pointer to left child
-and a pointer to right child */
+
 class node
 {
     public:
@@ -12,16 +9,12 @@ class node
     node* right;
 };
  
-/* Compute the "maxDepth" of a tree -- the number of
-    nodes along the longest path from the root node
-    down to the farthest leaf node.*/
 int maxDepth(node* node)
 {
     if (node == NULL)
         return -1;
     else
     {
-        /* compute the depth of each subtree */
         int lDepth = maxDepth(node->left);
         int rDepth = maxDepth(node->right);
      
@@ -32,8 +25,6 @@ int maxDepth(node* node)
     }
 }
  
-/* Helper function that allocates a new node with the
-given data and NULL left and right pointers. */
 node* newNode(int data)
 {
     node* Node = new node();
@@ -58,4 +49,3 @@ int main()
     return 0;
 }
  
-// This code is contributed by Amit Srivastav
