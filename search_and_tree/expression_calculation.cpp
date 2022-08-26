@@ -1,7 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
  
-// Class to represent the nodes of syntax tree
 class node
 {
 public:
@@ -13,22 +12,13 @@ public:
     }
 };
  
-// Utility function to return the integer value
-// of a given string
 int toInt(string s)
 {
     int num = 0;
-         
-    // Check if the integral value is
-    // negative or not
-    // If it is not negative, generate the number
-    // normally
     if(s[0]!='-')
         for (int i=0; i<s.length(); i++)
             num = num*10 + (int(s[i])-48);
-    // If it is negative, calculate the +ve number
-    // first ignoring the sign and invert the
-    // sign at the end
+   
     else
         for (int i=1; i<s.length(); i++)
         {
@@ -39,8 +29,6 @@ int toInt(string s)
     return num;
 }
  
-// This function receives a node of the syntax tree
-// and recursively evaluates it
 int eval(node* root)
 {
     // empty tree
@@ -70,7 +58,6 @@ int eval(node* root)
     return l_val/r_val;
 }
  
-//driver function to check the above program
 int main()
 {
     // create a syntax tree
