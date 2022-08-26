@@ -1,8 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
  
-/* A binary tree node has data, pointer to left child
-and a pointer to right child */
+
 class node
 {
     public:
@@ -10,9 +9,7 @@ class node
     node* left;
     node* right;
 };
- 
-/* Helper function that allocates a new node with the
-given data and NULL left and right pointers. */
+
 node* newNode(int data)
 {
     node* Node = new node();
@@ -23,7 +20,6 @@ node* newNode(int data)
     return(Node);
 }
  
-/* Computes the number of nodes in a tree. */
 int size(node* node)
 {
     if (node == NULL)
@@ -32,7 +28,7 @@ int size(node* node)
         return(size(node->left) + 1 + size(node->right));
 }
  
-/* Driver code*/
+
 int main()
 {
     node *root = newNode(1);
