@@ -45,23 +45,21 @@ int partition(int A[], int low, int high)
 
 void quickSort(int A[], int low, int high)
 {
-    int partitionIndex; // Index of pivot after partition
+    int partitionIndex;
 
     if (low < high)
     {
         partitionIndex = partition(A, low, high); 
-        quickSort(A, low, partitionIndex - 1);  // sort left subarray 
-        quickSort(A, partitionIndex + 1, high); // sort right subarray
+        quickSort(A, low, partitionIndex - 1);  
+        quickSort(A, partitionIndex + 1, high); 
     }
 }
 
 int main()
 {
-    //int A[] = {3, 5, 2, 13, 12, 3, 2, 13, 45};
+    
     int A[] = {9, 4, 4, 8, 7, 5, 6};
-    // 3, 5, 2, 13, 12, 3, 2, 13, 45
-    // 3, 2, 2, 13i, 12, 3j, 5, 13, 45
-    // 3, 2, 2, 3j, 12i, 13, 5, 13, 45 --> first call to partition returns 3
+   
     int n = 9;
     n =7;
     printArray(A, n);
